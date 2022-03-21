@@ -67,15 +67,6 @@ public class searchStudent extends HttpServlet {
     	}
       
       
-      if(result.isEmpty()) {
-    	  System.out.println("empty");
-    	  request.setAttribute("noresult", "true");
-      }
-      
-      else {
-    	  request.setAttribute("noresult", "false");
-      }
-      
       request.setAttribute("result", result);
       request.getRequestDispatcher("/searchResult.jsp").forward(request, response);
       

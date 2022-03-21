@@ -6,7 +6,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Search Result Page</title>
         <style>
         	h1 {
 				    width:100%;
@@ -91,8 +91,9 @@
 			<a href="searchstudent.html">
 				<button>Back to Search</button>
 			</a>
-			<a href="/webproject-orm/addStudent.html">
+			<a href="addStudent.html">
 				<button>Add new student entry</button>
+			</a>
 		</div>
 		
 		
