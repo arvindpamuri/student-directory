@@ -25,6 +25,8 @@ public class searchStudent extends HttpServlet {
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  String sid =  request.getParameter("sid");
+	  String fname =  request.getParameter("fname");
+	  String lname =  request.getParameter("lname");
       String email = request.getParameter("email");
       String phone = request.getParameter("phone");
       String date = request.getParameter("date");
@@ -34,6 +36,12 @@ public class searchStudent extends HttpServlet {
       
       if(!sid.isEmpty())
     	  list.add("SID=" + "'" +sid+ "'");
+      
+      if(!fname.isEmpty())
+    	  list.add("FIRSTNAME=" + "'" +fname+ "'");
+      
+      if(!lname.isEmpty())
+    	  list.add("LASTNAME=" + "'" +lname+ "'");
       
       if(!email.isEmpty())
     	  list.add("EMAIL=" + "'" +email+ "'");
@@ -59,8 +67,17 @@ public class searchStudent extends HttpServlet {
     	}
       
       
+      if(result.isEmpty()) {
+    	  System.out.println("empty");
+    	  request.setAttribute("noresult", "true");
+      }
+      
+      else {
+    	  request.setAttribute("noresult", "false");
+      }
+      
       request.setAttribute("result", result);
-      request.getRequestDispatcher("/test.jsp").forward(request, response);
+      request.getRequestDispatcher("/searchResult.jsp").forward(request, response);
       
    }
 
@@ -81,6 +98,7 @@ public class searchStudent extends HttpServlet {
          
          if(!list.isEmpty()) {
         	 
+        	 System.out.println("entered where");
         	 query += "WHERE " + String.join(" AND ", list);
         	 
          }

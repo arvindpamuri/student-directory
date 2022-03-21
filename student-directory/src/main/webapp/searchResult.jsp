@@ -35,27 +35,33 @@
 			  background-color: #04AA6D;
 			  color: white;
 			}
+			
+			button {
+			  background-color: #4CAF50;
+			  border: none;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 20px 2px;
+			  cursor: pointer;
+			}
+			
+			.end {
+				display: block;
+			    margin-left: auto;
+			    margin-right: auto }
+			}
+			
 		</style>
     </head>
     <body>
-        <%-- <table id="messages" border="1">
-            <tr>
-                <th>Message</th>
-                
-                <th>Type</th>
-            </tr>
-
-            <c:forEach var="msg" items="${requestScope.messageList}">
-                <tr>
-                    <td>${msg[0]}</td>
-                    <td>${msg[1]}</td>
-                </tr>
-            </c:forEach>    
-        </table> --%>
+    
         <h1>Student Details</h1>
         
         <table id="students">
-        
           <tr>
           	<th>Student ID</th>
           	<th>First Name</th>
@@ -74,6 +80,22 @@
 		  	</tr>
 		  </c:forEach>
 		</table>
+		
+		
+		<div class="end">
+			<c:choose>
+			    <c:when test="${empty result}">
+			      <p>No data found with the provided info.</p>
+			    </c:when>
+			</c:choose>
+			<a href="searchstudent.html">
+				<button>Back to Search</button>
+			</a>
+			<a href="/webproject-orm/addStudent.html">
+				<button>Add new student entry</button>
+		</div>
+		
+		
         
     </body>
 </html>
