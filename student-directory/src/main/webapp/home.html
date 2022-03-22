@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Home Page</title>
 <style type="text/css">
+
+	h1{
+	text-align: center;
+	}
+
 	blocktext {
     margin-left: auto;
     margin-right: auto;
@@ -19,21 +24,40 @@
 			  text-decoration: none;
 			  display: inline-block;
 			  font-size: 16px;
-			  margin: 20px 2px;
+			  margin: 20px 10px;
 			  cursor: pointer;
 			}
+			
+		.main-div {
+		  position: absolute;
+		  width: 300px;
+		  height: 200px;
+		  z-index: 15;
+		  top: 50%;
+		  left: 50%;
+		  margin: -100px 0 0 -150px;
+		  display: flex;
+		  flex-direction: row;
+		  
+	}
+		
 
 </style>
 </head>
 <body>
-
-	<div>
-		<a href="searchstudent.html">
+	<h1>Welcome to Student Directory</h1>
+	<div class="main-div">
+		<div>
+			<a href="searchstudent.html">
 			<button>Search Data</button>
-		</a>
-		<a href="addStudent.html">
+			</a>
+		</div>
+		<div>
+			<a href="addStudent.html">
 			<button>Insert Data</button>
-		</a>
+			</a>
+		</div>
+		
 	</div>
 	
 </body>
