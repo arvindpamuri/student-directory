@@ -21,7 +21,7 @@ input[type=text], input[type=date] {
   resize: vertical;
 }
 
-input[type=submit] {
+.button {
   background-color: #04AA6D;
   color: white;
   padding: 12px 20px;
@@ -39,6 +39,11 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.home-div {
+margin-top: 10px;
+}
+
 </style>
 </head>
 <body>
@@ -51,10 +56,10 @@ input[type=submit]:hover {
     <input type="text" name="sid" placeholder="Search by Student ID">
     
     <label for="fname">First Name</label>
-    <input type="text" name="fname" placeholder="Search by First ID">
+    <input type="text" name="fname" placeholder="Search by First Name">
     
     <label for="lname">Last Name</label>
-    <input type="text" name="lname" placeholder="Search by Last ID">
+    <input type="text" name="lname" placeholder="Search by Last Name">
     
     <label for="email">Student Email</label>
     <input type="text" name="email" placeholder="Search by email">
@@ -66,8 +71,11 @@ input[type=submit]:hover {
     <input type="date" name="date" placeholder="Search by Student graduation date">
     
 
-    <input type="submit" value="Submit">
+    <input class="button" type="submit" value="Submit">
   </form>
+  <div class="home-div">
+	  	  <a href="home.html"><button class="button">home</button></a>  
+	  </div>
 </div>
 
 </body>
